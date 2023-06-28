@@ -11,11 +11,11 @@
 #' @export
 #'
 #' @examples viewsalaryserver()  
-krmesprocesstransfersrcserver <- function(input,output,session,dms_token) {
+krmesprocesstransfersrcbillserver <- function(input,output,session,dms_token) {
 
   
   shiny::observe({
-    shiny::observeEvent(input$btn_krmesprocesstransfersrc_view,
+    shiny::observeEvent(input$btn_krmesprocesstransfersrcbill_view,
                         {
                             sql = 'select * from rds_kr_mes_src_processtransfer'
                             
@@ -128,7 +128,7 @@ krmesprocesstransfersrcserver <- function(input,output,session,dms_token) {
                                             
                                             )
                             #显示数据
-                            tsui::run_dataTable2(id = 'krmesprocesstransfersrc_view_data', data = data)
+                            tsui::run_dataTable2(id = 'krmesprocesstransfersrcbill_view_data', data = data)
                             
                             
                  
@@ -151,8 +151,8 @@ krmesprocesstransfersrcserver <- function(input,output,session,dms_token) {
 #' @export
 #'
 #' @examples HrvServer()
-krmesprocesstransfersrcServer <- function(input,output,session,dms_token) {
+krmesprocesstransfersrcbillServer <- function(input,output,session,dms_token) {
   #预览数据
-  krmesprocesstransfersrcserver(input,output,session,dms_token)
+  krmesprocesstransfersrcbillserver(input,output,session,dms_token)
 
 }
